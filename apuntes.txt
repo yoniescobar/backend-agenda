@@ -1,0 +1,72 @@
+¿Qué es node.js?
+Node.js es una plataforma que permite a los desarrolladores utilizar JavaScript para construir aplicaciones del lado del servidor, lo que proporciona un entorno de desarrollo más uniforme y eficiente en la pila completa de una aplicación web.
+
+Node.js también cuenta con un amplio ecosistema de módulos y bibliotecas a través de npm (Node Package Manager), que facilita la integración de funcionalidades adicionales en tus aplicaciones.
+
+
+¿Qué es Express?
+Express, por otro lado, es un marco de aplicación web para Node.js. Proporciona una serie de características y utilidades que facilitan la creación de aplicaciones web y APIs. Express simplifica la configuración de rutas, el manejo de peticiones y respuestas HTTP, la gestión de middleware, y otros aspectos comunes de desarrollo web.
+
+, Node.js es el entorno de ejecución de JavaScript del lado del servidor, y Express es un marco de aplicación web que se ejecuta sobre Node.js y facilita el desarrollo de aplicaciones web y APIs. La combinación de Node.js y Express es muy popular en el desarrollo web moderno
+
+-------------------------Creando el Backend API Node.js y Express
+
+1.-Crea un nuevo directorio para tu proyecto e ingresa en él:
+
+mkdir agenda-api
+cd agenda-api
+
+2.-Inicia un nuevo proyecto Node.js e instala las dependencias necesarias:
+npm init -y
+npm install express mysql body-parser
+
+3.-Configuración de Express y MySQL
+Crea un archivo index.js en el directorio raíz de tu proyecto: // index.js
+
+4.- Definición de Rutas, Crea una carpeta llamada routes y dentro de ella un archivo contactRoutes.js:
+
+5. - Configuración de la Base de Datos MySQL, Asegúrate de tener MySQL instalado y crea una base de datos llamada agenda. Luego, ejecuta el siguiente script para crear la tabla contacts:
+
+CREATE TABLE contacts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  email VARCHAR(255)
+);
+
+INSERT INTO contacts (name, phone, email) VALUES 
+  ('Nombre1', '123456789', 'nombre1@example.com'),
+  ('Nombre2', '987654321', 'nombre2@example.com'),
+  ('Nombre3', '555555555', 'nombre3@example.com'),
+
+
+6.- Inicia el Servidor, Puedes iniciar tu servidor con el siguiente comando:
+node index.js
+
+si hay problemas de permiso con la base de datos. ejecutar en consola de mysql
+alter user 'root'@'localhost' identified with 
+mysql_native_password by '12003906';
+
+7.- configuracion nodemon
+
+npm i nodemon 
+
+configurar  package.json.
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+
+  8.- Instalar y cargar base de datos en laragon
+
+  9.- Problemas de cors
+El problema de CORS (Cross-Origin Resource Sharing) surge cuando un recurso de un dominio intenta acceder a recursos de otro dominio. Para solucionar este problema, puedes configurar tu servidor Node.js (Express) para permitir solicitudes desde un origen específico.
+  
+  
+  npm install cors
+
+configurar en archivo index.js
+
+
